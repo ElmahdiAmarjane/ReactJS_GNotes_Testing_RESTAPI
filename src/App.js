@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
 import CreateAccount from './components/signup/Signup';
+import ManageNote from './components/manageNote/ManageNote';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/manageNote" element={<ManageNote />} />
       </Routes>
     </Router>
   );

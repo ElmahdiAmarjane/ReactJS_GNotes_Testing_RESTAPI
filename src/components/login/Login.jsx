@@ -1,8 +1,72 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import iconhome from "../../assets/icons/homeicon.png"
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const Login = ()=>{
+     const [email , setEmail] = useState("");
+     const [password , setPassword] =useState("");
+     const [errorInputs,setErrorInputs] = useState("");
+     const navigate = useNavigate("");
+    const handleLogin = async()=>{
+           if(email != "" && password!=""){
+              
+            await axios.post("http://localhost:9080/gnote/api/gnotes/v1/user/login", {
+                email,
+                password,
+              })
+              .then(res => {
+                console.log(res.data)
+                if(res.data!=null ){
+                    navigate("/manageNote");
+                }
+                else{
+                    //setErrorInputs("Email or password incorrect")
+                }
+                
+              });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           }else{
+            setErrorInputs("Please fill in all fields");
+           }
+    }
+
 
   
   return(
@@ -17,20 +81,20 @@ const Login = ()=>{
            
              
               <div className=" bg-white rounded shadow-2xl p-7 sm:p-10">
-                <h3 className="mb-4 text-center text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                <h3 className="mb-0 text-center text-xl font-semibold sm:text-center sm:mb-4 sm:text-2xl">
                  Log in 
                 </h3>
-                <form>
+               
+                    <p className='text-rose-600 text-center'>{errorInputs}</p>
                   <div className="mb-1 sm:mb-2">
                     <label
-                      htmlFor="email"
                       className="inline-block mb-1 font-medium"
                     >
                       E-mail
                     </label>
-                    <input
+                    <input onChange={(e)=>{setEmail(e.target.value)}}
                       placeholder="your email here"
-                      required
+                      value={"elmahdi@gmail.com"}
                       type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="name"
@@ -39,14 +103,13 @@ const Login = ()=>{
                   </div>
                   <div className="mb-1 sm:mb-2">
                     <label
-                      htmlFor="password"
                       className="inline-block mb-1 font-medium"
                     >
                       Password
                     </label>
-                    <input
+                    <input onChange={(e)=>setPassword(e.target.value)}
                       placeholder="your password here"
-                      required
+                      
                       type="password"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="password"
@@ -54,8 +117,8 @@ const Login = ()=>{
                     />
                   </div>
                   <div className="mt-4  bg-gray-400 ">
-                    <button
-                      type="submit"
+                    <button onClick={()=>{handleLogin()}}
+                     
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 hover:border-2 border-black focus:shadow-outline focus:outline-none "
                     >
                       Log in 
@@ -64,7 +127,7 @@ const Login = ()=>{
                   <p className="text-xs text-gray-600 sm:text-sm mt-5 text-center">
                     don't have an account ,<Link to="/create-account"><span className="text-white text-green-700 p-2 font-bold hover:cursor-pointer ">sign up now</span> </Link> 
                   </p>
-                </form>
+               
               </div>
 
             </div>

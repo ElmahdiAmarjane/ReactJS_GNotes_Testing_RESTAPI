@@ -10,19 +10,23 @@ const Login = ()=>{
      const [errorInputs,setErrorInputs] = useState("");
      const navigate = useNavigate("");
     const handleLogin = async()=>{
-           if(email != "" && password!=""){
-              
+           if(email !== "" && password!==""){
+              console.log(email , password);
             await axios.post("http://localhost:9080/gnote/api/gnotes/v1/user/login", {
                 email,
                 password,
               })
               .then(res => {
                 console.log(res.data)
-                if(res.data!=null ){
-                    navigate("/manageNote");
+                console.log(typeof(res.data))
+                if(res.data!=="" ){
+                  sessionStorage.setItem('currentUser', res.data.email);
+                  sessionStorage.setItem('currentUserId', res.data.id);
+                     if(res.data.admin) navigate("/manageUsers");
+                     else navigate("/manageNote");
                 }
                 else{
-                    //setErrorInputs("Email or password incorrect")
+                    setErrorInputs("Email or password incorrect")
                 }
                 
               });
@@ -94,7 +98,7 @@ const Login = ()=>{
                     </label>
                     <input onChange={(e)=>{setEmail(e.target.value)}}
                       placeholder="your email here"
-                      value={"elmahdi@gmail.com"}
+                     
                       type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="name"
@@ -125,7 +129,7 @@ const Login = ()=>{
                     </button>
                   </div>
                   <p className="text-xs text-gray-600 sm:text-sm mt-5 text-center">
-                    don't have an account ,<Link to="/create-account"><span className="text-white text-green-700 p-2 font-bold hover:cursor-pointer ">sign up now</span> </Link> 
+                    don't have an account ,<Link to="/create-account"><span className="text-white text-green-600 p-2 font-bold hover:cursor-pointer ">sign up now</span> </Link> 
                   </p>
                
               </div>

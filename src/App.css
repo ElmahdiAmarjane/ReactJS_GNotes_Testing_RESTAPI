@@ -1,0 +1,28 @@
+/* For Webkit (Chrome, Safari, Opera) */
+/* Common styles for both vertical and horizontal scrollbars */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px; /* Set the height for horizontal scrollbar */
+  }
+  
+  /* Track styles */
+  ::-webkit-scrollbar-track {
+    background-color: #000000;
+  }
+  
+  /* Thumb styles for both vertical and horizontal scrollbars */
+  ::-webkit-scrollbar-thumb {
+    background-color: #6558be;
+    border-radius: 6px;
+  }
+  
+  /* Styles specifically for horizontal scrollbar */
+  ::-webkit-scrollbar-thumb:horizontal {
+    background-color: #6558be;
+  }
+  
+  /* Styles specifically for vertical scrollbar */
+  ::-webkit-scrollbar-thumb:vertical {
+    background-color: #6558be;
+  }
+  

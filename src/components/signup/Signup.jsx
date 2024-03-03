@@ -77,7 +77,7 @@ const Signup = ()=>{
                     </button>
                   </div>
                   <p className="text-xs text-gray-600 sm:text-sm mt-5 text-center">
-                    Already have  Account ,<Link to="/login"><span className="text-white text-green-700 p-2 font-bold hover:cursor-pointer ">log in now</span> </Link> 
+                    Already have  Account ,<Link to="/login"><span className="text-white text-green-600 p-2 font-bold hover:cursor-pointer ">Log in now</span> </Link> 
                   </p>
                 </form>
               </div>

@@ -7,6 +7,7 @@ import Login from './components/login/Login';
 import CreateAccount from './components/signup/Signup';
 import ManageNote from './components/manageNote/ManageNote';
 import ManageUsers from './components/manageUsers/ManageUsers';
+import EditNote from './components/manageNote/EditNote';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/manageNote" element={<ManageNote />} />
         <Route path="/manageUsers" element={<ManageUsers />} />
+        <Route path="/editeNote" element={<EditNote />} />
       </Routes>
     </Router>
   );

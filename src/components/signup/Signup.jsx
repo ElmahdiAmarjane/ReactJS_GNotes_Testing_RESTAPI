@@ -5,6 +5,8 @@ import iconhome from "../../assets/icons/homeicon.png"
 
 const Signup = ()=>{
 
+
+  
    return(
 <div className="overflow-hidden bg-gray-900 ">
 <div className='float-right '>

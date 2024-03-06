@@ -4,7 +4,9 @@ import Navbar from "../navbar/Navbar";
 import NoteCard from "./NoteCard";
 import EditNote from "./EditNote";
 import { Navigate } from "react-router-dom";
-
+import SearchNote from "./SearchNote";
+import DeleteConfirm from "../popups/DeleteConfirm";
+import AddNewNote from "./AddNewNote"
 const ManageNote = () => {
   const [allNotes, setAllNotes] = useState([]);
   const [isEditClicked, setEditClicked] = useState(false);
@@ -52,7 +54,16 @@ const ManageNote = () => {
         Welcome to manage your notes, normal user,{" "}
         {sessionStorage.getItem("currentUser")}
       </h1>
-      {isEditClicked ? (
+      <div>
+        <AddNewNote 
+           getAllNotes={getAllNotes}
+        />
+      </div>
+      <div className="w-[60%] m-auto">
+        <SearchNote/>
+        </div>
+  <div className="overflow-y-auto overflow-x-hidden sticky  right-0 flex  left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] ">
+  {isEditClicked ? (
         <EditNote
           note={noteClicked}
           hideEditPop={hideEditPop}
@@ -61,14 +72,18 @@ const ManageNote = () => {
           getAllNotes={getAllNotes}
         />
       ) : null}
+  </div>
+      
 
+        
+      
       <div className="allNotes w-4/5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 m-auto mt-10">
         {allNotes.map((note, index) => (
           <NoteCard
             key={note.id}
             note={note}
             getAllNotes={getAllNotes}
-            isEditClickedHandler={()=>isEditClickedHandler}
+            isEditClickedHandler={isEditClickedHandler}
           />
         ))}
       </div>

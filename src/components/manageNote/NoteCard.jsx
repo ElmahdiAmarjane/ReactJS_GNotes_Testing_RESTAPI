@@ -33,7 +33,7 @@ const NoteCard = ({note,getAllNotes,isEditClickedHandler}) => {
           </p>
           <div className="  opacity-0 transition-opacity group-hover:opacity-100 w-[10rem] bottom-0 absolute flex justify-evenly  mt-5 mb-5">
           
-          <a onClick={() => isEditClickedHandler(note)}
+          <a onClick={() =>{ isEditClickedHandler(note)}}
             type="button"
             
             className=" bg-indigo-600 px-3 py-1 text-white pointer-events-auto mr-5 inline-block cursor-pointer rounded text-base font-normal leading-normal text-primary transition duration-150 ease-in-out hover:scale-105 bg-black  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700"

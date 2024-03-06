@@ -24,8 +24,15 @@ const EditNote =({note,cancelEditPop,hideEditPop,saveEdit,getAllNotes})=>{
             
        
       }
-       
-
+        const handleInputBody=(e)=>{
+             setBody(e.target.value);
+             note.body=e.target.value;
+        }      
+        const handleInputSubject=(e)=>{
+            setSubject(e.target.value);
+            note.subject=e.target.value;
+       }  
+ 
 
 
 
@@ -46,7 +53,7 @@ const EditNote =({note,cancelEditPop,hideEditPop,saveEdit,getAllNotes})=>{
                     </label>
                     <input
                         className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
-                        type="text" value={subject} onChange={(e)=>{setSubject(e.target.value)}} />
+                        type="text" value={note.subject} onChange={(e)=>{handleInputSubject(e)}} />
                 </div>
 
                
@@ -55,8 +62,8 @@ const EditNote =({note,cancelEditPop,hideEditPop,saveEdit,getAllNotes})=>{
                     <label className="text-gray-600 dark:text-gray-400">Body </label>
                     <textarea
                         className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
-                        name="bio"
-                        value={body} onChange={(e)=>setBody(e.target.value)}
+                       
+                        value={note.body}  onChange={(e)=>handleInputBody(e)}
                         ></textarea>
                 </div>
                 <div className="flex justify-end ">
@@ -65,7 +72,7 @@ const EditNote =({note,cancelEditPop,hideEditPop,saveEdit,getAllNotes})=>{
                          onClick={()=>{saveEdit();saveChange()}}>Save changes</button>
                         <button
                         className="py-1.5 px-3 m-1 text-center bg-rose-600  rounded-md text-white  hover:bg-rose-600 hover:text-gray-100 dark:text-gray-200 dark:bg-rose-400"
-                         onClick={()=>cancelEditPop()} >Cancel</button>
+                         onClick={()=>{cancelEditPop()}} >Cancel</button>
                 </div>
             </div>
         </div>

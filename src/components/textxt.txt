@@ -1,0 +1,17 @@
+
+
+       
+{removeClicked? (<>
+        
+      <div className="popDeleteProduct">
+            <div className="close-pop" onClick={()=>setRemoveClicked(false)}>X</div>
+            <h2>Do you really want to delete it ?</h2>
+            <div className="delete-options">
+                <button onClick={()=>removeUser()}>Yes</button>
+                <button onClick={()=>setRemoveClicked(false)}>No</button>
+            </div>
+            <div>{Error}</div>
+       </div>
+      </>)
+      :(<></>)
+      }

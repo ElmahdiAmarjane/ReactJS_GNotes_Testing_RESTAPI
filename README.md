@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<h1>Project Description</h1>
+Welcome to our ReactJS project, integrated with a backend developed using Jakarta REST API and JEE deployed on OpenLiberty. This project aims to provide a comprehensive note management system where users can create accounts, manage their notes, and admins can oversee account verification and user management.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Features</h1>
+<h4>Home page : </h4>
 
-## Available Scripts
+![Capture d'écran 2024-03-15 135445](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/3cecd6ff-4354-498f-9544-0c17378a1087)
 
-In the project directory, you can run:
+User Authentication: Users can create accounts to access the note management system.
+<h4>SIGN UP</h4>
 
-### `npm start`
+![Capture d'écran 2024-03-15 135508](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/01566089-5311-4d35-9992-d07467833c61)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h4>SIGN IN</h4>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Capture d'écran 2024-03-15 135453](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/9292f5b6-07f8-4b66-9eb9-822635a82400)
 
-### `npm test`
+Admin Verification: Admins have the authority to manage user accounts.
+![Capture d'écran 2024-03-15 143833](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/3e9ddcbb-0a7d-4d6f-a8d3-eaacabd7f286)
+![Capture d'écran 2024-03-15 143841](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/83c1734e-ce63-4224-86e8-9c1228aa5e55)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note Management: Once logged in, users can perform CRUD operations on their notes.
+![Capture d'écran 2024-03-15 145520](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/6c318d58-2315-45ab-8ee3-73b41cec4974)
 
-### `npm run build`
+![Capture d'écran 2024-03-15 145502](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/037e738e-4bfd-4882-8cc5-d120e5d40ec2)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Capture d'écran 2024-03-15 145536](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/16dcf728-16f6-4f8c-b32a-113a179e8a2f)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Capture d'écran 2024-03-15 145550](https://github.com/ElmahdiAmarjane/ReactJS_GNotes_Testing_RESTAPI/assets/99350940/eb73afd8-5a65-4de0-be19-f9d26ccff576)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h1>Backend Repository</h1>
+The backend for this project is developed separately and is housed in another repository. You can find the backend code and instructions for deployment at [ https://github.com/ElmahdiAmarjane/REST-API-JAKARTA-WS-NOTES.git ]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h1>Technologies Used</h1>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Frontend: ReactJS , sass , axios
+</hr>
+Backend: Jakarta REST API, JEE
+Server: OpenLiberty
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
